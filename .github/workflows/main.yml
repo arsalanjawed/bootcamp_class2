@@ -28,12 +28,17 @@ jobs:
         uses: actions/setup-node@v1.4.2
         with:
           version: 12 
+      
       - name: action-yarn
-        uses: CultureHQ/actions-yarn@v1.0.1
+  # You may pin to the exact commit or the version.
+  # uses: comchangs/action-yarn@e4a1f4800849aa2e73dbc77d872a3c011cdc28d5
+        uses: comchangs/action-yarn@v0.1-beta
         with:
           cmd: install 
+      
       - name: installing surge
         run: npm install -g surge
+      
       - name: deploying on surge
         run: surge ./build http://c2_bootcamp_aj.surge.sh/ --token ${{secrets.S_TOKEN}}
         
