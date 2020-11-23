@@ -28,11 +28,11 @@ jobs:
         uses: actions/setup-node@v2.1.2
         with:
           version: 12 
-      - name: Yarn install cache
-        uses: c-hive/gha-yarn-cache@v1
+      - name: install node 
+        run: npm install 
         
       - name: creating build 
-        run: yarn build
+        run: npm build
          
       - name: installing surge
         run: npm install -g surge
